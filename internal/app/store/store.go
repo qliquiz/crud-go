@@ -6,13 +6,13 @@ import (
 )
 
 type Store struct {
-	config *Config
-	db *sql.DB
+	config         *Config
+	db             *sql.DB
 	userRepository *UserRepository
 }
 
 func New(config *Config) *Store {
-	return &Store {
+	return &Store{
 		config: config,
 	}
 }
@@ -26,7 +26,7 @@ func (s *Store) Open() error {
 	if err := db.Ping(); err != nil {
 		return err
 	}
-	
+
 	s.db = db
 
 	return nil
