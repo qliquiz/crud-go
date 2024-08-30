@@ -10,7 +10,7 @@ import (
 func Start(config *Config) error {
 	db, err := NewDB(config.DatabaseURL)
 	if err != nil {
-		return err 
+		return err
 	}
 
 	defer db.Close()
